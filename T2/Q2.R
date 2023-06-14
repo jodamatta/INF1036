@@ -24,7 +24,7 @@ gera.variaveis <- function(funcao, nsamples){
       if(U[i] <= 0.4){
         X[i] <- sqrt(U[i]/2)
       }else{
-        X[i] <- -(400+sqrt(-80000*U[i]+83200))/400
+        X[i] <- -(-400+sqrt(-80000*U[i]+83200))/400
       }
     }
   }
