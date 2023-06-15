@@ -15,16 +15,16 @@ gera.variaveis <- function(funcao, nsamples){
   }
   
   # caso 2: g(x)
-  # a funcao de distribuicao acumulada de g(x) é Int(4x,0..x), 0 <= x <= 0.5 e Int(4x, 0..0.5)+Int(4(1-x),0.5..x), 0.4<=x<=1
-  # então, F(x) é (4x^2)/2 = 2x^2, 0<=x<=0.5, e 0.32 + (-2x^2 + 4x - 1.28) = -2x^2 + 4x - 0.96, 0.5 < x <= 1
-  # as inversas de F(x) sao: sqrt(x/2), 0 <= x <= 0.5 e - (-400+sqrt(-80000x+83200))/400
+  # a funcao de distribuicao acumulada de g(x) é Int(4k dk,0..x), 0 <= x <= 0.5 e Int(4x, 0..0.5)+Int(4(1-k) dk,0.5..x), 0.5<=x<=1
+  # então, G(x) é (4x^2)/2 = 2x^2, 0<=x<=0.5, e 0.5 + (-2x^2 + 4x - 1.5) = -2x^2 + 4x - 1, 0.5 < x <= 1
+  # as inversas de G(x) sao: sqrt(x/2), 0 <= x <= 0.5 e 1 + (sqrt(-2x+2))/2
   
   else if(funcao == 2){
     for(i in 1:nsamples){
       if(U[i] <= 0.5){
         X[i] <- sqrt(U[i]/2)
       }else{
-        X[i] <- -(-400+sqrt(-80000*U[i]+83200))/400
+        X[i] <- 1 - sqrt(-2*U[i] +2)/2
       }
     }
   }
