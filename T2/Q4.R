@@ -8,13 +8,6 @@
 p <- function(x){
   return(20*x*(1-x)^3)
 }
-
-# inversa da uniforme, para gerar Y (funcao de densidade uniforme)
-
-h.inversa <- function(x){
-  return(0+(1-0)*x)
-}
-
 gera.variaveis <- function(nsamples){
   X <- rep(0,nsamples)
   c <- 2.109375
@@ -22,7 +15,7 @@ gera.variaveis <- function(nsamples){
     aux = TRUE
     while(aux){
       u1 <- runif(1)
-      y <- h.inversa(u1)
+      y <- u1 # porque y aplicado em h(x) é y
       u2 <- runif(1)
       if(u2 <= (p(y)/c*1)){
         X[i] = y
