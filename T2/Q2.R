@@ -5,7 +5,7 @@ gera.variaveis <- function(funcao, nsamples){
   U <- runif(nsamples)
   
   # caso 1: f(x)
-  # a funcao de distribuicao acumulada de f(x) é F(X) = Int(3x^2, 0..x) = x^3, 0 <= x <= 1
+  # a funcao de distribuicao acumulada de f(x) é F(X) = Int(3k^2, 0..x) = x^3, 0 <= x <= 1
   # a inversa de F(x) é F^(-1)(x) = x^(1/3)
   
   if(funcao == 1){
